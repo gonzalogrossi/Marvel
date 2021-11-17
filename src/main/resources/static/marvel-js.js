@@ -1,7 +1,7 @@
 async function getHero(){
     const id = document.getElementById("id").value;
-    const request = await fetch('http://localhost:8080/API/Marvel/getHeroID/'+id, { // se detiene hasta obtener el resultado para seguir
-        method: 'POST',
+    const request = await fetch('http:localhost:8080/API/Marvel/getHeroID/'+id, { // se detiene hasta obtener el resultado para seguir
+        method: 'GET',
         headers: {
             'Accept': 'aplicattion/json', // indica que va a usar json y que el contenido va a ser json
             'Content-Type': 'application/json'

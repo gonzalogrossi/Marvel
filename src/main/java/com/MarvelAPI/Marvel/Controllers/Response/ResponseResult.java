@@ -1,10 +1,9 @@
-package com.MarvelAPI.Marvel.Logic;
+package com.MarvelAPI.Marvel.Controllers.Response;
 
-import java.util.List;
 
-public class Hero {
+public class ResponseResult {
     private String id, name, description;
-    private List<String> comics;
+    private ResponseComic comics;
 
     public String getId() {
         return id;
@@ -30,11 +29,11 @@ public class Hero {
         this.description = description;
     }
 
-    public List<String> getComics() {
+    public ResponseComic getComics() {
         return comics;
     }
 
-    public void setComics(List<String> comics) {
+    public void setComics(ResponseComic comics) {
         this.comics = comics;
     }
 }
