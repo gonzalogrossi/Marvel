@@ -1,0 +1,25 @@
+body {
+    background-image: url('marvel.png');
+	background-size: cover;
+}
+
+div input {
+	font-family: armenian;
+	border-radius: 5px;
+
+}
+
+div button {
+	background: rgb(238,174,202);
+	background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+	border-radius: 5px;
+	font-family: armenian;
+	color: rgb(2,0,36);
+}
+
+div button:hover{
+	background: rgb(238,174,202);
+	background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(52,69,89,1) 100%);
+	color: white;
+	
+}	

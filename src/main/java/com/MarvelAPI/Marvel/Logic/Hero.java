@@ -37,4 +37,10 @@ public class Hero {
     public void setComics(List<String> comics) {
         this.comics = comics;
     }
+
+
+    public boolean Compare (Hero hero){
+        return (hero.getId().equals(this.id) && hero.getName().equals(this.name) &&
+                hero.getDescription().equals(this.getDescription()) && hero.getComics().equals(this.comics));
+        }
 }
