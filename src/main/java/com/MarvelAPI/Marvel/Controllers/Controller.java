@@ -4,22 +4,23 @@ import com.MarvelAPI.Marvel.Logic.Exceptions.InternalServerError;
 import com.MarvelAPI.Marvel.Logic.Exceptions.NotAuthorized;
 import com.MarvelAPI.Marvel.Logic.Exceptions.NotFoundException;
 import com.MarvelAPI.Marvel.Logic.Hero;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.HttpServerErrorException;
-
+import org.springframework.boot.SpringApplication;
 
 import java.io.IOException;
 
+@SpringBootApplication
 @RestController
+@CrossOrigin(origins="*")
 @RequestMapping("API/Marvel")
 public class Controller {
 
     Service service = new Service();
 
-    @CrossOrigin(origins = "https://gateway.marvel.com/", maxAge = 3600)
+   // @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping("/getHeroID/{id}")
     public ResponseEntity<Hero> getHeroID(@PathVariable String id) {
         try {

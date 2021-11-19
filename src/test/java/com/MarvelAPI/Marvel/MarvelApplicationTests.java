@@ -1,6 +1,7 @@
 package com.MarvelAPI.Marvel;
 
 import com.MarvelAPI.Marvel.Controllers.Service;
+import com.MarvelAPI.Marvel.Logic.Exceptions.NotFoundException;
 import com.MarvelAPI.Marvel.Logic.Hero;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -33,11 +34,9 @@ class MarvelApplicationTests {
 	@Test
 	void InvalidID() {
 		try {
-			Hero hero = service.getID("1009368");
-			Hero heroExpected = expectedHero();
-			assertTrue(!hero.Compare(heroExpected));
-		} catch (Exception e) {
-			e.printStackTrace();
+			Hero hero = service.getID("HGYgff");
+		} catch (Exception e) {e.printStackTrace();
+			assertTrue(e instanceof NotFoundException);
 		}
 	}
 

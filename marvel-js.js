@@ -1,23 +1,30 @@
 async function getHero(){
     const id = document.getElementById("id").value;
-    fetch("http://localhost:8080/API/Marvel/getHeroID/"+id)
-  .then(response => response.json())
-  .then(hero => showHeroDetails(hero));
+	const url ='http://localhost:8080/API/Marvel/getHeroID/'+document.getElementById("id").value
+    const request = await fetch(url ,{
+	method: 'GET',
+	headers: {
+		'Accept': 'application/json',
+		'Content-Type': 'application/json'
+	}
+	});
+	const hero = await request.json();
 
-	showHeroDetails = hero => {
-
-    const idHero = document.querySelector('#name_txt');
-    const name = document.querySelector('#description_txt');
-    const description = document.querySelector('#heroID_response');
-
-    idHero.value = hero.id;
-    name.value = hero.name;
-    description.value = hero.description;
+   document.getElementById("id").value=hero.id;
+   document.getElementById("name").value=hero.name;
+   document.getElementById('description').value=hero.description;
 
     var listComics = "";
     hero.comics.forEach(comics => {
-        listComics+= '<tr><td>${comics}</td></tr>'
+        listComics+= '<tr><td>'+comics+'</td></tr>'
     });
     document.getElementById("tableComics").innerHTML = listComics;
 	}
+	
+function Clear(){
+	document.getElementById("id").value="";
+	document.getElementById("name").value="";
+	document.getElementById('description').value="";
+	document.getElementById("tableComics").innerHTML = "";
+	
 }

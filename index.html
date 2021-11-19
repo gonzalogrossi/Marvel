@@ -8,15 +8,16 @@
 <link rel="stylesheet" href="estilo.css" />
 
 <div>
-    <input type="text" name="ID" id="id" placeholder="ID">
+    <input type="text" name="ID" id="id" value="" placeholder="ID">
     <button type="button" class="btn btn-primary mb-3" onclick="getHero()">Search</button>
+	<button type="button" class="btn btn-primary mb-3" onclick="Clear()">Clear</button>
 </div>
 
 <div>
-    <input type="text" name="name_txt" placeholder="Name">
+    <input type="text" name="name_txt" id="name" value="" placeholder="Name">
 </div>
 <div>
-    <input type="text" name="description_txt" placeholder="Description">
+    <input type="text" name="description_txt" id="description" value="" placeholder="Description">
 </div>
 
 <table class="table">
@@ -28,7 +29,6 @@
     <tbody id="tableComics">
     </tbody>
 </table>
-
 
 
 
